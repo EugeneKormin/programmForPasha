@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_app/buttons/add.dart';
-import 'package:web_app/pages/addRewards.dart';
+import 'package:web_app/navigation/buttons.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -12,14 +11,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  List listOfChildren = ['Вася', 'Петя', 'Оля'];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white70,
         appBar: AppBar(
-          title: Text('Pasha\'s program'),
+          title: Text('Добавление'),
           centerTitle: true,
           backgroundColor: Colors.indigoAccent,
         ),
@@ -27,13 +24,15 @@ class _HomePageState extends State<HomePage> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Button(
-                      action: "add_km",
-                      button_name: "добавить км"
+                  NavigationButton(
+                      route: 'addKm',
+                      margin_from_top: 50,
+                      button_name: "тренировка"
                   ),
-                  Button(
-                      action: "add_rewards",
-                      button_name: "добавить награды"
+                  NavigationButton(
+                      route: 'addReward',
+                      margin_from_top: 50,
+                      button_name: "соревнования"
                   )
                 ]
             ),
