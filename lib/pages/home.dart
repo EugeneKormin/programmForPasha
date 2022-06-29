@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_app/navigation/buttons.dart';
+import 'package:web_app/buttons/navigation.dart';
 
 
 class HomePage extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:web_app/navigation/buttons.dart';
+import 'package:web_app/buttons/navigation.dart';
 
 
 class addReward extends StatefulWidget {
@@ -11,10 +11,33 @@ class addReward extends StatefulWidget {
 }
 
 class _addRewardState extends State<addReward> {
+  late double distance;
+  late String name;
+  late int position;
+
+  void changeDistance(double change_distance_for) {
+    setState(() {
+      distance = change_distance_for;
+    });
+  }
+
+  void changeName(String change_name_for) {
+    setState(() {
+      name = change_name_for;
+    });
+  }
+
+  void changePosition(int change_position_for) {
+    setState(() {
+      position = change_position_for;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+
         backgroundColor: Colors.white70,
         appBar: AppBar(
           title: Text('соревнования'),
@@ -25,11 +48,6 @@ class _addRewardState extends State<addReward> {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                NavigationButton(
-                    route: '/',
-                    margin_from_top: 0,
-                    button_name: "вернуться без сохранения"
-                ),
                 TextField(
                   decoration: InputDecoration(labelText: "дистанция"),
                   keyboardType: TextInputType.number,
@@ -49,13 +67,18 @@ class _addRewardState extends State<addReward> {
                 NavigationButton(
                     route: '/',
                     margin_from_top: 0,
-                    button_name: "сл. воспитанник"
+                    button_name: "сохранить => сл. воспитанник"
                 ),
                 NavigationButton(
                     route: '/',
                     margin_from_top: 0,
-                    button_name: "сохранить и выйти"
-                )
+                    button_name: "сохранить => выйти"
+                ),
+                NavigationButton(
+                    route: '/',
+                    margin_from_top: 0,
+                    button_name: "выход без сохранения"
+                ),
               ]
         )
     ));
