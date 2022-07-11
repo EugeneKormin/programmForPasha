@@ -16,6 +16,7 @@ class _addRewardState extends State<addReward> {
   String _distance = '';
   String _name = '';
   String _position = '';
+  String _ip = '';
   var _date = null;
   bool isButtonEnabled = false;
 
@@ -36,11 +37,11 @@ class _addRewardState extends State<addReward> {
   void save_reward() {
     Save.reward(
       name: _name,
-      distance: _distance,
       position: _position,
       date: (_date == null)
           ? DateFormat.yMMMMEEEEd().format(DateTime.now())
           : DateFormat.yMMMMEEEEd().format(_date),
+      type: "reward",
     );
   }
 
