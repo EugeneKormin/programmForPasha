@@ -37,6 +37,7 @@ class _addKmState extends State<addKm> {
       date: (_date == null)
           ? DateFormat.yMMMMEEEEd().format(DateTime.now())
           : DateFormat.yMMMMEEEEd().format(_date),
+      type: "training",
     );
   }
 
