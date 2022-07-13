@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:web_app/pages/home.dart';
-import 'package:web_app/pages/addKm.dart';
-import 'package:web_app/pages/addRewards.dart';
+
+import 'package:skii_app/pages/home.dart';
+import 'package:skii_app/pages/addKm.dart';
+import 'package:skii_app/pages/addRewards.dart';
+import 'package:skii_app/pages/showData.dart';
 
 
 void main() => runApp(MaterialApp(
@@ -11,7 +13,8 @@ void main() => runApp(MaterialApp(
     initialRoute: '/',
     routes: {
         '/': (context) => HomePage(),
-        'addKm': (context) => addKm(),
-        'addReward': (context) => addReward()
+        'addKm': (context) => AddKm(),
+        'addReward': (context) => AddReward(),
+        'showData': (context) => ShowData(),
     }
 ));

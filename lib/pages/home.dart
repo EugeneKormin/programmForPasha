@@ -32,9 +32,21 @@ class HomePage extends StatelessWidget {
                   child: Text('competitions'),
                 ),
               ],
-          ),],
-        ),
-      )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    {Navigator.pushNamed(context, 'showData');}
+                  },
+                  child: Text('showData'),
+                ),
+              ],
+            ),
+          ],
+        )
+      ),
     );
   }
 }
