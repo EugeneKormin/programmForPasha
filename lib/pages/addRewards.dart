@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
-import 'package:skii_app/db/sql.dart';
+import 'package:skii_app/api/api.dart';
 
 
 class AddReward extends StatefulWidget {
@@ -34,23 +34,24 @@ class _addRewardState extends State<AddReward> {
     noSave_amd_go();
   }
   void save_km() {
-    SQL.Save(
+    API.Save(
       DB_NAME: "training",
       NAME: _NAME,
       DISTANCE: _DISTANCE,
       date: (_date == null)
-          ? DateFormat.yMMMMEEEEd().format(DateTime.now())
-          : DateFormat.yMMMMEEEEd().format(_date),
+          ? DateFormat.yMd().format(DateTime.now())
+          : DateFormat.yMd().format(_date),
     );
   }
+
   void save_reward() {
-    SQL.Save(
+    API.Save(
       DB_NAME: "reward",
       NAME: _NAME,
       POSITION: _POSITION,
       date: (_date == null)
-          ? DateFormat.yMMMMEEEEd().format(DateTime.now())
-          : DateFormat.yMMMMEEEEd().format(_date),
+          ? DateFormat.yMd().format(DateTime.now())
+          : DateFormat.yMd().format(_date),
     );
   }
 

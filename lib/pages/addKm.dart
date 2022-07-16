@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'package:skii_app/db/sql.dart';
+import 'package:skii_app/api/api.dart';
 
 
 class AddKm extends StatefulWidget {
@@ -29,13 +29,13 @@ class _addKmState extends State<AddKm> {
     noSave_amd_go();
   }
   void save_km() {
-    SQL.Save(
+    API.Save(
       DB_NAME: "training",
       NAME: _NAME,
       DISTANCE: _DISTANCE,
       date: (_date == null)
-          ? DateFormat.yMMMMEEEEd().format(DateTime.now())
-          : DateFormat.yMMMMEEEEd().format(_date),
+          ? DateFormat.yMd().format(DateTime.now())
+          : DateFormat.yMd().format(_date),
     );
   }
 
@@ -80,6 +80,7 @@ class _addKmState extends State<AddKm> {
                         lastDate: DateTime(2027)
                     ).then((value) {
                       setState(() {
+                        print("date: $value");
                         _date = value;
                       });
                     });
